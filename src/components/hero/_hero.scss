@@ -1,0 +1,140 @@
+@import "/src/tools/colors";
+@import "/src/tools/media-queries";
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 85vh;
+  background: rgba(0, 0, 0, 0.7);
+
+  @include mobile {
+    height: 89.5vh;
+  }
+
+  &__container {
+    width: 1200px;
+
+    @include mobile {
+      width: 300px;
+    }
+
+    .mobile-br {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+
+    .desktop-br {
+      display: block;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    position: relative;
+
+    &--img {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      right: 0;
+      z-index: -1;
+
+      @include mobile {
+        height: 100vh;
+      }
+    }
+    &--title {
+      font-family: "Yeseva One";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 53px;
+      text-transform: uppercase;
+      color: $light;
+
+      @include mobile {
+        text-align: center;
+        font-size: 23px;
+        line-height: 31px;
+      }
+
+      &__gold {
+        color: $gold;
+      }
+    }
+
+    &--description {
+      font-family: "Nunito Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 36px;
+      color: $light;
+
+      @include mobile {
+        text-align: start;
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+
+    &--btns {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+
+      @include mobile {
+        display: block;
+      }
+
+      &__calculate-btn {
+        padding: 20px 42px;
+        background: $gold;
+        box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.3);
+        border: none;
+        border-radius: 2px;
+        font-family: "Nunito Sans";
+        font-style: italic;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 15px;
+        text-align: center;
+        color: $light;
+        cursor: pointer;
+
+        @include mobile {
+          width: 100%;
+          height: 51px;
+        }
+      }
+
+      &__submit-btn {
+        padding: 20px 22px;
+        border: 1px solid #ffffff;
+        border-radius: 2px;
+        background: none;
+        font-family: "Nunito Sans";
+        font-style: italic;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 15px;
+        text-align: center;
+        color: $light;
+        cursor: pointer;
+
+        @include mobile {
+          width: 100%;
+          height: 51px;
+          margin: 13px 0;
+        }
+      }
+    }
+  }
+}
